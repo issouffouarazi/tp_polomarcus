@@ -1,0 +1,7 @@
+services:
+  tp-coop:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/usr/tp # pointe sur le <./>, un point de montage. => ne pas mettre COPY .. dans le Dockerfile
