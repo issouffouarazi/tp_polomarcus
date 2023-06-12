@@ -15,6 +15,9 @@ After you've pushed your changes, [create an issue](https://docs.github.com/en/i
 
 Make some changes and [create a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) on somebody else's repo.
 
+### Add someone to your repo
+It's not fun to code alone, add one or 2 persons as collaborators of your repo
+
 ## Dockerize your project
 Some of your colleagues use a different Operating System than yours, or does not have Scala Build Tool (SBT) installed, so you decide to use Docker.
 
@@ -59,24 +62,24 @@ Update your CI to use your service `my-scala-app` with docker
 
 Every commit on a branch should start a CI job to run test : `sbt test`
 
+You can find [help for this step here](https://github.com/polomarcus/tp/issues/2#issuecomment-1562833864)
+
 ### Step 6 - code coverage on the CI
 Add the coverage information on your CI and pull request meta data.
 
 ## Closer to a real project
-### Add a database
-You would like to save some data, so you decide to use a database. Instead of downloading the ZIP file, you will use your docker-compose file
-* Start [PostgresSQL](https://hub.docker.com/_/postgres)
-* Code a function that save a news
-* Write a test this function and run it locally
-* Run this test on the CI
 
 ### Create a website
 Your website showing some tv news should be an accesible at "http://locahost:8080"
 
 You are free to use your favorite framework and language.
 
-## Continuous Deployment (CD)
-You will deploy your service on [Github Pages](https://pages.github.com/) after every commit on the branch `main`
+### Add a database
+You would like to save some data, so you decide to use a database. Instead of downloading the ZIP file, you will use your docker-compose file
+* Start [PostgresSQL](https://hub.docker.com/_/postgres)
+* Code a function that save a news
+* Write a test this function and run it locally
+* Run this test on the CI
 
 ## Functional tests
 After you've watched [this video](https://www.youtube.com/watch?v=0GypdsJulKE), you have decided to write functional tests (end to end).
@@ -89,4 +92,8 @@ You've heard to the service [SauceLabs](https://saucelabs.com/), you can integra
 ## An external service
 Your service depends now on an external service (a 3rd party) to get data from news that you cannot control. How can you test their response ?
 
-What about mocking them ?
+What about [mocking them](https://en.wikipedia.org/wiki/Mock_object) ?
+
+## Continuous Deployment (CD)
+You will deploy your service on [Scalingo](https://scalingo.com/) (if you need a DB - no credit card required) or [Github Pages](https://pages.github.com/) after every commit on the branch `main`
+
